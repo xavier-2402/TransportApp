@@ -2,5 +2,11 @@
     <string name="app_name">TransportApp</string>
     <string name="usuario">Usuario</string>
     <string name="vacio"></string>
-
+    <string name="tamañovehiculo">Tamaño del Vehiculo:</string>
+    <string name="seleccioneunchofer">Seleccione un Chofer:</string>
+    <string name="aceptar">Aceptar:</string>
+    <string name="transportista">Transportista:</string>
+    <string name="solicitudServicio">Solicitud de servicio:</string>
+    <string name="cancelar">Cancelar:</string>
+    <string name="direccion">Direccion:</string>
 </resources>
