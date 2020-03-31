@@ -2,6 +2,10 @@
     <string name="app_name">TransportApp</string>
     <string name="usuario">Usuario</string>
     <string name="vacio"></string>
+    <string name="clientes">Clientes</string>
+    <string name="registrate">Registrate</string>
+    <string name="SMsregistro">No tienes una cuenta?</string>
+    <string name="contraseña">Contraseña</string>
     <string name="tamañovehiculo">Tamaño del Vehiculo:</string>
     <string name="seleccioneunchofer">Seleccione un Chofer:</string>
     <string name="aceptar">Aceptar:</string>
@@ -10,4 +14,10 @@
     <string name="cancelar">Cancelar:</string>
     <string name="direccion">Direccion:</string>
     <string name="title_activity_ventana4">Map</string>
+    <string name="title_activity_registro_usuarios">RegistroUsuarios</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
