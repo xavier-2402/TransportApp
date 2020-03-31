@@ -4,87 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.Clientes">
+    tools:context=".RegistroGeneral">
 
 
-    <TextView
-        android:id="@+id/textView8"
+    <EditText
+        android:id="@+id/txtCedula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/infoPago"
+        android:ems="10"
+        android:hint="@string/cedula"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.145" />
 
     <EditText
-        android:id="@+id/txtTitulartarjeta"
+        android:id="@+id/txtNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/titularTarjeta"
+        android:hint="@string/nombres"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCedula"
+        app:layout_constraintVertical_bias="0.014" />
 
     <EditText
-        android:id="@+id/txtNumtarjeta"
+        android:id="@+id/txtApellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/numtarjeta"
+        android:hint="@string/apellidos"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitulartarjeta"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNombre"
+        app:layout_constraintVertical_bias="0.02" />
 
     <EditText
-        android:id="@+id/txtFechaTarjeta"
+        android:id="@+id/txtDireccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/fechavencimiento"
+        android:hint="@string/direccion"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumtarjeta"
-        app:layout_constraintVertical_bias="0.049" />
+        app:layout_constraintTop_toBottomOf="@+id/txtApellido"
+        app:layout_constraintVertical_bias="0.023" />
 
     <EditText
-        android:id="@+id/txtCodigotarjeta"
+        android:id="@+id/txtTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/codigoSeguridad"
+        android:hint="@string/telefono"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtFechaTarjeta"
-        app:layout_constraintVertical_bias="0.075" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDireccion"
+        app:layout_constraintVertical_bias="0.018" />
+
+    <EditText
+        android:id="@+id/txtCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTelefono"
+        app:layout_constraintVertical_bias="0.028" />
 
     <Button
-        android:id="@+id/btnRegistrarse"
+        android:id="@+id/btnSiguiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/registrate"
+        android:backgroundTint="@color/design_default_color_background"
+        android:text="@string/siguiente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCodigotarjeta"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCorreo"
+        app:layout_constraintVertical_bias="0.207" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
