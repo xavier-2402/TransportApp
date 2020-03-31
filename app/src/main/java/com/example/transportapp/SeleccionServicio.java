@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Ventana6 extends AppCompatActivity {
+public class SeleccionServicio extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ventana6);
+        setContentView(R.layout.activity_seleccionservicio);
     }
 }

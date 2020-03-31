@@ -9,7 +9,7 @@ import com.example.transportapp.Controller.PagerController;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
-public class Ventana2 extends AppCompatActivity {
+public class RegistroDetallado extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager viewPager;
     TabItem cliente,transportista;
@@ -17,7 +17,7 @@ public class Ventana2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ventana2);
+        setContentView(R.layout.activity_registrodetallado);
         tabLayout=findViewById(R.id.tablayout);
         viewPager=findViewById(R.id.viewpager);
         cliente= findViewById(R.id.tabCliente);
