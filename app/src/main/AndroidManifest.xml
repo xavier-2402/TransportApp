@@ -31,12 +31,11 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".RegistroDetallado"
-             />
+            android:name=".Mapa"
+            android:label="@string/title_activity_ventana4" />
         <activity android:name=".SolicitudServicio" />
         <activity android:name=".SeleccionServicio" />
-        <activity android:name=".Mapa">
-            android:label="@string/title_activity_ventana4"
+        <activity android:name=".RegistroDetallado">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -76,7 +76,7 @@
         app:layout_constraintVertical_bias="0.075" />
 
     <Button
-        android:id="@+id/btnRegistrarse"
+        android:id="@+id/btnRegistrarCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/registrate"
