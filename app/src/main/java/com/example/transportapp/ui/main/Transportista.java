@@ -39,11 +39,7 @@ public class Transportista extends Fragment {
         nombre=rootView.findViewById(R.id.txtNombrePV);
         matricula=rootView.findViewById(R.id.txtMatricula);
         placa=rootView.findViewById(R.id.txtPlaca);
-        color=rootView.findViewById(R.id.txtColor);
-        modelo=rootView.findViewById(R.id.txtModelo);
-        marca=rootView.findViewById(R.id.txtMarca);
-        tipo=rootView.findViewById(R.id.txtTipo);
-        anio=rootView.findViewById(R.id.txtAnio);
+
         registrar=rootView.findViewById(R.id.btnRegistrarTransportista);
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,21 +68,6 @@ public class Transportista extends Fragment {
             retorno =false;
         }if (pla.isEmpty()){
             placa.setError("Campo vacio");
-            retorno =false;
-        }if (co.isEmpty()){
-            color.setError("Campo vacio");
-            retorno =false;
-        }if (mo.isEmpty()){
-            modelo.setError("Campo vacio");
-            retorno =false;
-        }if (ma.isEmpty()){
-            marca.setError("Campo vacio");
-            retorno =false;
-        }if (ti.isEmpty()){
-            tipo.setError("Campo vacio");
-            retorno =false;
-        }if (an.isEmpty()){
-            anio.setError("Campo vacio");
             retorno =false;
         }
 
