@@ -36,7 +36,6 @@ public class Transportista extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_transportista, container, false);
-        nombre=rootView.findViewById(R.id.txtNombrePV);
         matricula=rootView.findViewById(R.id.txtMatricula);
         placa=rootView.findViewById(R.id.txtPlaca);
 
@@ -62,9 +61,6 @@ public class Transportista extends Fragment {
         String an=anio.getText().toString();
         if (matri.isEmpty()){
             matricula.setError("Campo vacio");
-            retorno =false;
-        }if (nom.isEmpty()){
-            nombre.setError("Campo vacio");
             retorno =false;
         }if (pla.isEmpty()){
             placa.setError("Campo vacio");

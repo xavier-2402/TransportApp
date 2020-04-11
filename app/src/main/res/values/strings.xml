@@ -18,6 +18,7 @@
     <string name="marca">Marca</string>
     <string name="color">Color</string>
     <string name="año">Año</string>
+    <string name="añadirotro">Añadir otro vehiculo</string>
     <string name="ingresar">Ingresar</string>
     <string name="tipo">Tipo</string>
     <string name="codigoSeguridad">Codigo de seguridad(CVV)</string>

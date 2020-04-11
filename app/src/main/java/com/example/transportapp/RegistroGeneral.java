@@ -2,6 +2,7 @@ package com.example.transportapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +32,12 @@ public class RegistroGeneral extends AppCompatActivity {
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ValidarCampos();
+                if (ValidarCampos()==true){
+                    Intent intent = new Intent(getApplicationContext(),RegistroDetallado.class);
+                    startActivity(intent);
+                            finish();
+                }
+
             }
         });
         setContentView(R.layout.activity_registro_general);

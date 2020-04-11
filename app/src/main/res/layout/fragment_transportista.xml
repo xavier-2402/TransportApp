@@ -18,30 +18,18 @@
         app:layout_constraintVertical_bias="0.066" />
 
     <EditText
-        android:id="@+id/txtNombrePV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/nombrePropietario"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.032" />
-
-    <EditText
         android:id="@+id/txtMatricula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="548dp"
         android:ems="10"
         android:hint="@string/matricula"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombrePV"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <EditText
         android:id="@+id/txtPlaca"
@@ -58,14 +46,15 @@
 
     <Button
         android:id="@+id/btnRegistrarTransportista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/registrate"
+        android:layout_width="136dp"
+        android:layout_height="66dp"
+        android:text="@string/aceptar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbanio" />
+        app:layout_constraintTop_toBottomOf="@+id/cbanio"
+        app:layout_constraintVertical_bias="0.446" />
 
     <Spinner
         android:id="@+id/cbmodelo"
@@ -92,8 +81,8 @@
 
     <Spinner
         android:id="@+id/cbmarca"
-        android:layout_width="210dp"
-        android:layout_height="35dp"
+        android:layout_width="216dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,4 +112,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cbtipo"
         app:layout_constraintVertical_bias="0.122" />
+
+    <Button
+        android:id="@+id/btnAñadirVechiculo"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:text="@string/añadirotro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toEndOf="@+id/btnRegistrarTransportista"
+        app:layout_constraintTop_toBottomOf="@+id/cbanio"
+        app:layout_constraintVertical_bias="0.445" />
 </androidx.constraintlayout.widget.ConstraintLayout>
