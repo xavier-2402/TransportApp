@@ -13,6 +13,8 @@
     <string name="siguiente">Siguiente</string>
     <string name="nombrePropietario">Nombre de Propietario</string>
     <string name="matricula">Matricula</string>
+    <string name="contrasenia">Contraseña</string>
+    <string name="reescriba">Escriba nuevamente su contraseña</string>
     <string name="placa">Placa</string>
     <string name="modelo">Modelo</string>
     <string name="marca">Marca</string>

@@ -4,15 +4,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Loguin extends AppCompatActivity {
 private EditText usuario;
 private EditText contrasenia;
 private Button ingresar;
 private Button registrar;
+    String mensaje = "";
+    String mensaje2="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +47,7 @@ private Button registrar;
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Registro General", Toast.LENGTH_SHORT).show();
                 Intent intent  =new Intent(getApplicationContext(),RegistroGeneral.class);
                 startActivity(intent);
                 finish();
@@ -53,4 +69,54 @@ private Button registrar;
         }
             return retorno;
     }
+
+    public void ValidarUsuarioContrasenia(){
+        String sql = "http://10.0.2.2:8090/personas";
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        URL url = null;
+        HttpURLConnection conn;
+
+
+        try {
+            url = new URL(sql);
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.connect();
+            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+            String json = "";
+            while((inputLine = in.readLine()) != null){
+                response.append(inputLine);
+            }
+
+            json = response.toString();
+            JSONArray jsonArr = null;
+            jsonArr = new JSONArray(json);
+
+            for(int i = 0;i<jsonArr.length();i++){
+                JSONObject jsonObject = jsonArr.getJSONObject(i);
+                JSONObject jsonObject2 = jsonArr.getJSONObject(i);
+                mensaje = jsonObject.getString("contraseña");
+                mensaje2=jsonObject2.getString("usuario");
+                if(mensaje.equals(contrasenia.getText().toString())&& mensaje2.equals(usuario.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Bienvenido",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getApplicationContext(),"Usuario o contraseña incorrectos",Toast.LENGTH_SHORT).show();
+                    usuario.setText("");
+                    contrasenia.setText("");
+                }
+            }
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
