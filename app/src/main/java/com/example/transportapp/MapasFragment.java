@@ -112,7 +112,8 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
     Boolean actualPosition = true;
     JSONObject jso;
     Double longitudOrigen, latitudOrigen;
-
+    Double origen_final = -2.883309;
+    Double destino_final = -78.977781;
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -172,8 +173,10 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
                             .build();                   // Creates a CameraPosition from the builder
                     map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
-String url="https://maps.googleapis.com/maps/api/directions/json?origin="+latitudOrigen+","+longitudOrigen+"&destination=-2.883309,-78.977781&key=AIzaSyAusxSiPJnzrihaqEz1RYIPToRHUfjHaGs";
+                    String url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + latitudOrigen + "," + longitudOrigen + "&destination=" + origen_final + "," + destino_final + "&key=AIzaSyAusxSiPJnzrihaqEz1RYIPToRHUfjHaGs";
                     //String url ="https://maps.googleapis.com/maps/api/directions/json?origin="+latitudOrigen+","+longitudOrigen+"&destination=-2.883309,-78.977781";
+                    LatLng miDestino = new LatLng(origen_final, destino_final);
+                    map.addMarker(new MarkerOptions().position(miDestino).title("Aqui debo llegar"));
 
                     RequestQueue queue = Volley.newRequestQueue(getActivity());
                     StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
@@ -221,7 +224,7 @@ String url="https://maps.googleapis.com/maps/api/directions/json?origin="+latitu
                         String polyline = "" + ((JSONObject) ((JSONObject) jSteps.get(k)).get("polyline")).get("points");
                         Log.i("end", "" + polyline);
                         List<LatLng> list = PolyUtil.decode(polyline);
-                        map.addPolyline(new PolylineOptions().addAll(list).color(Color.GRAY).width(5));
+                        map.addPolyline(new PolylineOptions().addAll(list).color(Color.BLUE).width(5));
                     }
                 }
             }
