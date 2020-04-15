@@ -30,7 +30,7 @@ public class RegistroDetallado extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
                 if(tab.getPosition()==0){
-pagerController.notifyDataSetChanged();          }
+                    pagerController.notifyDataSetChanged();          }
                 if (tab.getPosition()==1){
                     pagerController.notifyDataSetChanged();
                 }

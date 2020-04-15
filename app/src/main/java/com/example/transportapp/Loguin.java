@@ -48,7 +48,7 @@ private Button registrar;
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Registro General", Toast.LENGTH_SHORT).show();
-                Intent intent  =new Intent(getApplicationContext(),RegistroGeneral.class);
+                Intent intent  =new Intent(getApplicationContext(),Registro.class);
                 startActivity(intent);
                 finish();
             }

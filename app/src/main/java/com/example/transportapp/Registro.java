@@ -9,48 +9,40 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class RegistroGeneral extends AppCompatActivity {
+public class Registro extends AppCompatActivity   {
+
+    private Button siguiente;
     private EditText nombre;
     private EditText apellido;
     private EditText direccion;
     private EditText correo;
     private EditText telefono;
     private EditText cedula;
-    private EditText usuario;
     private EditText pass;
     private EditText passverifica;
-    private Button siguiente;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_registro);
         cedula=findViewById(R.id.txtCedula);
         nombre=findViewById(R.id.txtNombre);
         apellido=findViewById(R.id.txtApellido);
         direccion=findViewById(R.id.txtDireccion);
         correo=findViewById(R.id.txtCorreo);
-        usuario=findViewById(R.id.txtUsuarioRegistro);
         pass=findViewById(R.id.txtPasswordRegistro);
         passverifica=findViewById(R.id.txtPasswordVerificar);
-        telefono=findViewById(R.id.txtTelefono);
         siguiente=findViewById(R.id.btnSiguiente);
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ValidarCampos()==true){
-                    Intent intent = new Intent(getApplicationContext(),RegistroDetallado.class);
-                    startActivity(intent);
-                            finish();
-                }
-
+                Intent intent = new Intent(getApplicationContext(), RegistroDetallado.class);
+                startActivity(intent);
+                finish();
             }
         });
-        setContentView(R.layout.activity_registro_general);
     }
 
-    public boolean ValidarCampos(){
+    /*public boolean ValidarCampos(){
         boolean retorno=true;
         String ced=cedula.getText().toString();
         String nom=nombre.getText().toString();
@@ -106,6 +98,5 @@ public class RegistroGeneral extends AppCompatActivity {
             passverifica.setText("");
         }
 
-    }
-
+    }*/
 }
