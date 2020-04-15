@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.transition.PatternPathMotion;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.regex.Pattern;
 
 public class Registro extends AppCompatActivity   {
 
@@ -32,9 +36,12 @@ public class Registro extends AppCompatActivity   {
         pass=findViewById(R.id.txtPasswordRegistro);
         passverifica=findViewById(R.id.txtPasswordVerificar);
         siguiente=findViewById(R.id.btnSiguiente);
+
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ValidarCampos();
+                validarContraseña();
                 Intent intent = new Intent(getApplicationContext(), RegistroDetallado.class);
                 startActivity(intent);
                 finish();
@@ -42,7 +49,7 @@ public class Registro extends AppCompatActivity   {
         });
     }
 
-    /*public boolean ValidarCampos(){
+    public boolean ValidarCampos(){
         boolean retorno=true;
         String ced=cedula.getText().toString();
         String nom=nombre.getText().toString();
@@ -50,7 +57,6 @@ public class Registro extends AppCompatActivity   {
         String dir=direccion.getText().toString();
         String co=correo.getText().toString();
         String tel=telefono.getText().toString();
-        String us=usuario.getText().toString();
         String pas1=pass.getText().toString();
         String pas2= passverifica.getText().toString();
         if (ced.isEmpty()){
@@ -62,18 +68,20 @@ public class Registro extends AppCompatActivity   {
         }if (ape.isEmpty()){
             apellido.setError("Campo vacio");
             retorno =false;
-        }if (co.isEmpty()){
+        }
+        if (co.isEmpty()) {
             correo.setError("Campo vacio");
-            retorno =false;
+            retorno = false;
+        }
+            if(!Patterns.EMAIL_ADDRESS.matcher(co).matches()){
+                    correo.setError("Correo invalido");
+                    retorno= false;
+
         }if (dir.isEmpty()){
             direccion.setError("Campo vacio");
             retorno =false;
         }if (tel.isEmpty()){
             telefono.setError("Campo vacio");
-            retorno =false;
-        }
-        if (us.isEmpty()){
-            usuario.setError("Campo vacio");
             retorno =false;
         }
         if (pas1.isEmpty()){
@@ -98,5 +106,5 @@ public class Registro extends AppCompatActivity   {
             passverifica.setText("");
         }
 
-    }*/
+    }
 }

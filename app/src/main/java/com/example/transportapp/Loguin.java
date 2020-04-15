@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,11 +38,11 @@ private Button registrar;
         contrasenia=findViewById(R.id.txtContraseña);
         ingresar=findViewById(R.id.btnIngresar);
         registrar=findViewById(R.id.btnRegistro);
+
         ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ValidarCampos();
-
             }
         });
         registrar.setOnClickListener(new View.OnClickListener() {
@@ -61,10 +62,14 @@ private Button registrar;
         String us = usuario.getText().toString();
         String con=contrasenia.getText().toString();
         if (us.isEmpty()){
-            usuario.getText().toString();
+            usuario.setError("Campo vacio");
             retorno =false;
+        }
+        if(!Patterns.EMAIL_ADDRESS.matcher(us).matches()){
+            usuario.setError("Correo invalido");
+            retorno= false;
         }if (con.isEmpty()){
-            contrasenia.getText().toString();
+            contrasenia.setError("Campo vacio");
             retorno =false;
         }
             return retorno;
