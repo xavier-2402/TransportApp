@@ -1,5 +1,6 @@
 package com.example.transportapp.ui.main;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,10 +16,14 @@ import android.widget.Spinner;
 
 import com.example.transportapp.R;
 
+import java.io.File;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Transportista extends Fragment {
+
+
 
     public Transportista() {
         // Required empty public constructor
@@ -76,5 +81,7 @@ public class Transportista extends Fragment {
 
         return retorno;
     }
+
+
 
 }

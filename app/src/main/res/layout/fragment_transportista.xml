@@ -57,15 +57,27 @@
         app:layout_constraintVertical_bias="0.446" />
 
     <Spinner
+        android:id="@+id/cbmodelo"
+        android:layout_width="208dp"
+        android:layout_height="38dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlaca"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <Spinner
         android:id="@+id/cbcolor"
         android:layout_width="211dp"
         android:layout_height="42dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlaca"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintTop_toBottomOf="@+id/cbmodelo"
+        app:layout_constraintVertical_bias="0.036" />
 
     <Spinner
         android:id="@+id/cbmarca"
