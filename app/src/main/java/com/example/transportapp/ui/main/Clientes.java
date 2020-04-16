@@ -1,5 +1,6 @@
 package com.example.transportapp.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.transportapp.Loguin;
 import com.example.transportapp.R;
 
 /**
@@ -42,6 +44,8 @@ public class Clientes extends Fragment {
             @Override
             public void onClick(View v) {
                 ValidarCampos();
+                Intent intent = new Intent(getActivity().getApplication(), Loguin.class);
+                startActivity(intent);
             }
         });
         return inflater.inflate(R.layout.fragment_clientes, container, false);
