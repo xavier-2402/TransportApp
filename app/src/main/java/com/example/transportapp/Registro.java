@@ -50,6 +50,8 @@ public class Registro extends AppCompatActivity   {
         });
     }
 
+
+
     public boolean ValidarCampos(){
         boolean retorno=true;
         String ced=cedula.getText().toString();
@@ -77,7 +79,6 @@ public class Registro extends AppCompatActivity   {
             if(!Patterns.EMAIL_ADDRESS.matcher(co).matches()){
                     correo.setError("Correo invalido");
                     retorno= false;
-
         }
             if (dir.isEmpty()){
             direccion.setError("Campo vacio");
@@ -117,4 +118,6 @@ public class Registro extends AppCompatActivity   {
         }
 
     }*/
+
+
 }

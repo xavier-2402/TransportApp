@@ -3,140 +3,147 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/findo2"
     android:layout_height="match_parent"
     tools:context=".ui.main.Transportista">
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="198dp"
-        android:layout_height="32dp"
+        android:layout_width="291dp"
+        android:layout_height="37dp"
         android:text="@string/infoVehiculo"
+        android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
-
-    <EditText
-        android:id="@+id/txtMatricula"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="548dp"
-        android:ems="10"
-        android:hint="@string/matricula"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintVertical_bias="0.207" />
 
     <EditText
         android:id="@+id/txtPlaca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="424dp"
         android:ems="10"
         android:hint="@string/placa"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMatricula"
-        app:layout_constraintVertical_bias="0.014" />
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnRegistrarTransportista"
         android:layout_width="136dp"
         android:layout_height="66dp"
+        android:backgroundTint="@android:color/transparent"
         android:text="@string/aceptar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cbanio"
-        app:layout_constraintVertical_bias="0.87" />
-
-    <Spinner
-        android:id="@+id/cbmodelo"
-        android:layout_width="208dp"
-        android:layout_height="38dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlaca"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintVertical_bias="0.446" />
 
     <Spinner
         android:id="@+id/cbcolor"
-        android:layout_width="211dp"
-        android:layout_height="42dp"
+        android:layout_width="320dp"
+
+        android:layout_height="62dp"
+        android:entries="@array/color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbmodelo"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPlaca"
+        app:layout_constraintVertical_bias="0.043" />
 
     <Spinner
         android:id="@+id/cbmarca"
-        android:layout_width="216dp"
-        android:layout_height="45dp"
+        android:layout_width="323dp"
+        android:layout_height="57dp"
         android:layout_marginBottom="300dp"
+        android:entries="@array/marca"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cbcolor"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.146" />
 
     <Spinner
         android:id="@+id/cbtipo"
-        android:layout_width="208dp"
-        android:layout_height="38dp"
+        android:layout_width="317dp"
+        android:layout_height="59dp"
+        android:entries="@array/tipo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cbmarca"
-        app:layout_constraintVertical_bias="0.033" />
+        app:layout_constraintVertical_bias="0.03" />
 
     <Spinner
         android:id="@+id/cbanio"
-        android:layout_width="201dp"
-        android:layout_height="39dp"
+        android:layout_width="316dp"
+        android:layout_height="60dp"
+        android:entries="@array/anio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cbtipo"
-        app:layout_constraintVertical_bias="0.032" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <Button
         android:id="@+id/btnAñadirVechiculo"
         android:layout_width="170dp"
         android:layout_height="65dp"
+        android:backgroundTint="@android:color/transparent"
         android:text="@string/añadirotro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toEndOf="@+id/btnRegistrarTransportista"
         app:layout_constraintTop_toBottomOf="@+id/cbanio"
-        app:layout_constraintVertical_bias="0.819" />
+        app:layout_constraintVertical_bias="0.445" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Añadir Imagenes del Vehículo"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="460dp" />
+    <EditText
+        android:id="@+id/txtMatricula"
+        android:layout_width="285dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:hint="@string/matricula"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtPlaca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cámara"
-        tools:layout_editor_absoluteX="255dp"
-        tools:layout_editor_absoluteY="446dp" />
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="84dp"
+        android:layout_height="66dp"
+        android:src="@drawable/car"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="56dp"
+        android:layout_height="62dp"
+        android:src="@drawable/mas"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.397" />
 </androidx.constraintlayout.widget.ConstraintLayout>
