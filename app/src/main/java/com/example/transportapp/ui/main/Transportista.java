@@ -46,7 +46,7 @@ public class Transportista extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_transportista, container, false);
         matricula=rootView.findViewById(R.id.txtMatricula);
         placa=rootView.findViewById(R.id.txtPlaca);
-        color=rootView.findViewById(R.id.cbcolor);
+       // color=rootView.findViewById(R.id.cbcolor);
         anio=rootView.findViewById(R.id.cbanio);
         tipo=rootView.findViewById(R.id.cbtipo);
         marca=rootView.findViewById(R.id.cbmarca);

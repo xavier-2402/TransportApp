@@ -12,6 +12,7 @@
         android:id="@+id/txtCedula"
         android:layout_width="220dp"
         android:layout_height="40dp"
+        android:contentDescription="@string/SMsregistro"
         android:ems="10"
         android:hint="@string/cedula"
         android:inputType="textPersonName"
@@ -26,6 +27,7 @@
         android:id="@+id/txtNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/nombres"
         android:ems="10"
         android:hint="@string/nombres"
         android:inputType="textPersonName"
@@ -134,10 +136,10 @@
         android:layout_height="119dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.026"
+        app:layout_constraintVertical_bias="0.111"
         app:srcCompat="@drawable/addusuario" />
 
     <TextView
@@ -147,11 +149,21 @@
         android:text="Datos de Usuario"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtCedula"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884" />
+        app:layout_constraintVertical_bias="0.115" />
+
+    <Button
+        android:id="@+id/cargar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="100dp"
+        android:text="Agregar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

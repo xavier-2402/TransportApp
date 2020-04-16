@@ -65,7 +65,12 @@ public class Registro extends AppCompatActivity   {
         if (ced.isEmpty()){
             cedula.setError("Campo vacio");
             retorno =false;
-        }if (nom.isEmpty()){
+        }
+        if (validadorDeCedula(ced)==false){
+            cedula.setError("Cedula Incorrecta");
+            retorno =false;
+        }
+        if (nom.isEmpty()){
             nombre.setError("Campo vacio");
             retorno =false;
         }if (ape.isEmpty()){
@@ -105,6 +110,48 @@ public class Registro extends AppCompatActivity   {
         return retorno;
     }
 
+
+    public boolean validadorDeCedula(String ced) {
+        boolean cedulaCorrecta=true;
+        int aux;
+        try {
+            if (cedula.length() == 10){
+                int tercerDigito = Integer.parseInt(ced.substring(2, 3));
+                if (tercerDigito < 6) {
+                    int[] coefValCedula = { 2, 1, 2, 1, 2, 1, 2, 1, 2 };
+                    int verificador = Integer.parseInt(ced.substring(9,10));
+                    int suma = 0;
+                    int digito = 0;
+                    for (int i = 0; i < (ced.length() - 1); i++){
+                        digito = Integer.parseInt(ced.substring(i, i + 1))* coefValCedula[i];
+                        suma += ((digito % 10) + (digito / 10));
+                    }
+                    if ((suma % 10 == 0) && (suma % 10 == verificador)) {
+                        cedulaCorrecta = true;
+                    }
+                    else if ((10 - (suma % 10)) == verificador) {
+                        cedulaCorrecta = true;
+                        aux=1;
+                    } else {
+                        cedulaCorrecta = false;
+                    }
+                } else {
+                    cedulaCorrecta = false;
+                }
+            } else {
+                cedulaCorrecta = false;
+            }
+        } catch (NumberFormatException nfe) {
+            cedulaCorrecta = false;
+        } catch (Exception err) {
+            Toast.makeText(getApplicationContext(),"Una excepcion ocurrio en el proceso de validadcion", Toast.LENGTH_SHORT).show();
+            cedulaCorrecta = false;
+        }
+        if (!cedulaCorrecta) {
+            Toast.makeText(getApplicationContext(),"La Cédula ingresada es Incorrecta", Toast.LENGTH_SHORT).show();
+        }
+        return cedulaCorrecta;
+    }
    /* public void validarContraseña(){
         String pas1= pass.getText().toString();
         String pas2=passverifica.getText().toString();
