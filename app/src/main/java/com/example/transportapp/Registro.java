@@ -33,6 +33,7 @@ public class Registro extends AppCompatActivity   {
         apellido=findViewById(R.id.txtApellido);
         direccion=findViewById(R.id.txtDireccion);
         correo=findViewById(R.id.txtCorreo);
+        telefono=findViewById(R.id.txtTelefono);
         pass=findViewById(R.id.txtPasswordRegistro);
         passverifica=findViewById(R.id.txtPasswordVerificar);
         siguiente=findViewById(R.id.btnSiguiente);
@@ -40,8 +41,8 @@ public class Registro extends AppCompatActivity   {
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Registro Detallado", Toast.LENGTH_SHORT).show();
                 ValidarCampos();
-                validarContraseña();
                 Intent intent = new Intent(getApplicationContext(), RegistroDetallado.class);
                 startActivity(intent);
                 finish();
@@ -77,10 +78,12 @@ public class Registro extends AppCompatActivity   {
                     correo.setError("Correo invalido");
                     retorno= false;
 
-        }if (dir.isEmpty()){
+        }
+            if (dir.isEmpty()){
             direccion.setError("Campo vacio");
             retorno =false;
-        }if (tel.isEmpty()){
+        }
+            if (tel.isEmpty()){
             telefono.setError("Campo vacio");
             retorno =false;
         }
@@ -91,10 +94,17 @@ public class Registro extends AppCompatActivity   {
             passverifica.setError("Campo vacio");
             retorno =false;
         }
+        if(pas1.equals(pas2)){
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"No coinciden las contraseñas", Toast.LENGTH_SHORT).show();
+            passverifica.setText("");
+            pass.setText("");
+        }
         return retorno;
     }
 
-    public void validarContraseña(){
+   /* public void validarContraseña(){
         String pas1= pass.getText().toString();
         String pas2=passverifica.getText().toString();
 
@@ -106,5 +116,5 @@ public class Registro extends AppCompatActivity   {
             passverifica.setText("");
         }
 
-    }
+    }*/
 }
