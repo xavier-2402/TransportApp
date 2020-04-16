@@ -12,7 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.transportapp.ui.main.R;
+import com.example.transportapp.R;
+
 
 public class HomeFragment extends Fragment {
 
