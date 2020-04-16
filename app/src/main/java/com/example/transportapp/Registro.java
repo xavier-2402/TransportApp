@@ -1,20 +1,29 @@
 package com.example.transportapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.transition.PatternPathMotion;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.regex.Pattern;
 
 public class Registro extends AppCompatActivity   {
 
+    //Declaración de variables
     private Button siguiente;
     private EditText nombre;
     private EditText apellido;
@@ -24,10 +33,12 @@ public class Registro extends AppCompatActivity   {
     private EditText cedula;
     private EditText pass;
     private EditText passverifica;
+    private ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+        //Casting
         cedula=findViewById(R.id.txtCedula);
         nombre=findViewById(R.id.txtNombre);
         apellido=findViewById(R.id.txtApellido);
@@ -37,6 +48,7 @@ public class Registro extends AppCompatActivity   {
         pass=findViewById(R.id.txtPasswordRegistro);
         passverifica=findViewById(R.id.txtPasswordVerificar);
         siguiente=findViewById(R.id.btnSiguiente);
+        img =findViewById(R.id.imagen);
 
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +63,8 @@ public class Registro extends AppCompatActivity   {
     }
 
 
+
+    //Metodo para validar los Campos
 
     public boolean ValidarCampos(){
         boolean retorno=true;
@@ -111,6 +125,7 @@ public class Registro extends AppCompatActivity   {
     }
 
 
+    //Metodo para validar que la cédula sea ecuatoriana
     public boolean validadorDeCedula(String ced) {
         boolean cedulaCorrecta=true;
         int aux;
@@ -152,6 +167,28 @@ public class Registro extends AppCompatActivity   {
         }
         return cedulaCorrecta;
     }
+
+    public void onclick(View view) {
+        cargarImagen();
+
+    }
+
+    //Metodo para cargar Imagen
+    private void cargarImagen() {
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.setType("image/");
+        startActivityForResult(intent.createChooser(intent,"Seleccione la aplicacion"),10);
+
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_OK) {
+            Uri pathlocal = data.getData();
+            img.setImageURI(pathlocal);
+        }
+    }
+
    /* public void validarContraseña(){
         String pas1= pass.getText().toString();
         String pas2=passverifica.getText().toString();

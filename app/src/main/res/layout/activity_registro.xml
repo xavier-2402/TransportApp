@@ -131,7 +131,7 @@
         app:layout_constraintVertical_bias="0.064" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imagen"
         android:layout_width="139dp"
         android:layout_height="119dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -149,7 +149,7 @@
         android:text="Datos de Usuario"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintBottom_toTopOf="@+id/imagen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -159,8 +159,9 @@
         android:id="@+id/cargar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="296dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="96dp"
+        android:onClick="onclick"
         android:text="Agregar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
