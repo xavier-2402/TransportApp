@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="color">
+        <item>Seleccione el color del vehiculo</item>
         <item>Negro</item>
         <item>Blanco</item>
         <item>Azul</item>
@@ -11,6 +12,7 @@
     </string-array>
 
     <string-array name="anio">
+        <item>Seleccione el año del vehiculo</item>
         <item>menor a 1995</item>
         <item>1995</item>
         <item>1996</item>
@@ -41,6 +43,7 @@
     </string-array>
 
     <string-array name="tipo">
+        <item>Seleccione el tipo de vechiculo</item>
         <item>Camioneta  4x2</item>
         <item>Camioneta  4x4 </item>
         <item>Camion 4x2 </item>
@@ -53,6 +56,7 @@
 
 
     <string-array name="marca">
+        <item>Sleccione la marca del vehiculo</item>
         <item>Chevrolet</item>
         <item>Toyota</item>
         <item>Nissan</item>

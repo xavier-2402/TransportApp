@@ -37,7 +37,7 @@ public class Transportista extends Fragment {
     private Spinner tipo;
     private Spinner anio;
     private Button registrar;
-    ArrayAdapter<CharSequence> adapter;
+
 //https://www.androfast.com/2017/11/todo-sobre-como-usar-el-controlador.html
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,9 +50,7 @@ public class Transportista extends Fragment {
         anio=rootView.findViewById(R.id.cbanio);
         tipo=rootView.findViewById(R.id.cbtipo);
         marca=rootView.findViewById(R.id.cbmarca);
-       adapter = ArrayAdapter.createFromResource(rootView.getContext(), R.array.color, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-       //color.setAdapter(adapter);
+
 
         registrar=rootView.findViewById(R.id.btnRegistrarTransportista);
         registrar.setOnClickListener(new View.OnClickListener() {
