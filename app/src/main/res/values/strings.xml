@@ -37,6 +37,7 @@
     <string name="solicitudServicio">Solicitud de servicio:</string>
     <string name="cancelar">Cancelar:</string>
     <string name="ruta">Ver Ruta</string>
+    <string name="pago">Finalizar Pago</string>
     <string name="direccion">Direccion:</string>
     <string name="title_activity_ventana4">Map</string>
     <string name="title_activity_registro_usuarios">RegistroUsuarios</string>

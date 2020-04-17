@@ -1,6 +1,8 @@
 package com.example.transportapp;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -10,6 +12,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
@@ -53,6 +57,7 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
     private String mParam1;
     private String mParam2;
     private OnFragmentInteractionListener mListener;
+    private Button boton_finalizar;
 
     public MapasFragment() {
         // Required empty public constructor
@@ -78,12 +83,15 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -158,16 +166,16 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public void onMyLocationChange(Location location) {
 
-                if (actualPosition){
+                if (actualPosition) {
                     latitudOrigen = location.getLatitude();
                     longitudOrigen = location.getLongitude();
-                    actualPosition=false;
+                    actualPosition = false;
 
-                    LatLng miPosicion = new LatLng(latitudOrigen,longitudOrigen);
+                    LatLng miPosicion = new LatLng(latitudOrigen, longitudOrigen);
                     map.addMarker(new MarkerOptions().position(miPosicion).title("Aqui estoy yo"));
 
                     CameraPosition cameraPosition = new CameraPosition.Builder()
-                            .target(new LatLng(latitudOrigen,longitudOrigen))      // Sets the center of the map to Mountain View
+                            .target(new LatLng(latitudOrigen, longitudOrigen))      // Sets the center of the map to Mountain View
                             .zoom(17)
                             .bearing(90)// Sets the zoom
                             .build();                   // Creates a CameraPosition from the builder
@@ -187,7 +195,7 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
                             try {
                                 jso = new JSONObject(response);
                                 trazarRuta(jso);
-                                Log.i("jsonRuta: ",""+response);
+                                Log.i("jsonRuta: ", "" + response);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -204,7 +212,6 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
                 }
             }
         });
-
 
 
     }
@@ -231,6 +238,20 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void finalizarPago() {
+        boton_finalizar = boton_finalizar.findViewById(R.id.boton_finalizar);
+        boton_finalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(MapasFragment.this.getContext(), "", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MapasFragment.this.getContext(), InformacionFinal.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
 
