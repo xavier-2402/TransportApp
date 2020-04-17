@@ -20,7 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".InformacionFinal"></activity>
+        <activity android:name=".InformacionFinal" />
         <activity
             android:name=".ui.main.Menus"
             android:label="@string/title_activity_menus"
@@ -40,8 +40,8 @@
             android:value="AIzaSyAusxSiPJnzrihaqEz1RYIPToRHUfjHaGs" />
 
         <activity android:name=".Loguin" />
-        <activity android:name=".SeleccionServicio" />
-        <activity android:name=".SolicitudServicio">
+        <activity android:name=".SolicitudServicio" />
+        <activity android:name=".SeleccionServicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

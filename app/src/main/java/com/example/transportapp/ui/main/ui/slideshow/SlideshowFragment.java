@@ -29,12 +29,6 @@ import java.util.UUID;
 
 public class SlideshowFragment extends Fragment {
 
-    private List<Trans>listaPerson=new ArrayList<Trans>();
-    ArrayAdapter<Trans> arrayAdapterPersona;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
-    ListView lv_datosPersonas;
-
     private SlideshowViewModel slideshowViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -44,9 +38,6 @@ public class SlideshowFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
         final TextView textView = root.findViewById(R.id.text_slideshow);
 
-        lv_datosPersonas= lv_datosPersonas.findViewById(R.id.lv_datosPersonas);
-        iniciarFirabase();
-        listarDatos();
 
         slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -57,39 +48,4 @@ public class SlideshowFragment extends Fragment {
         return root;
     }
 
-    private void iniciarFirabase() {
-        FirebaseApp.initializeApp(this.getContext());
-        firebaseDatabase= FirebaseDatabase.getInstance();
-        databaseReference=firebaseDatabase.getReference();
-
-    }
-
-    private void listarDatos() {
-        Trans t=new Trans();
-        t.setConductor_id(UUID.randomUUID().toString());
-        t.setNombre_trans("Tebo");
-        t.setTarifa_trans("345$");
-        t.setMatricula_vehi("TTT-111");
-        databaseReference.child("Transportista").child(t.getConductor_id()).setValue(t);
-
-        databaseReference.child("Transportista").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                listaPerson.clear();
-                for(DataSnapshot objSnaptshot : dataSnapshot.getChildren()){
-                    Trans p=objSnaptshot.getValue(Trans.class);
-                    listaPerson.add(p);
-
-                    arrayAdapterPersona=new ArrayAdapter<Trans>(SlideshowFragment.this.getContext(),android.R.layout.simple_list_item_1,listaPerson);
-                    lv_datosPersonas.setAdapter(arrayAdapterPersona);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-    }
 }

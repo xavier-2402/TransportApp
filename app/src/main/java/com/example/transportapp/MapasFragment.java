@@ -241,17 +241,10 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
     }
 
 
-    public void finalizarPago() {
-        boton_finalizar = boton_finalizar.findViewById(R.id.boton_finalizar);
-        boton_finalizar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(MapasFragment.this.getContext(), "", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MapasFragment.this.getContext(), InformacionFinal.class);
-                startActivity(intent);
+    public void finalizarPago(View view) {
+        Intent intent = new Intent(MapasFragment.this.getContext(), InformacionFinal.class);
+        startActivity(intent);
 
-            }
-        });
     }
 
 
