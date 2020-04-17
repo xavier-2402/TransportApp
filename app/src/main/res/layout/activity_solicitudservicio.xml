@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:background="@drawable/fondo1"
     android:layout_height="match_parent"
-    tools:context=".SolicitudServicio">
+    tools:context=".SolicitudServicio"
+    android:id="@+id/contenedor">
 
     <TextView
         android:id="@+id/textView4"
@@ -81,10 +82,10 @@
         android:text="@string/cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.287"
+        app:layout_constraintHorizontal_bias="0.292"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintVertical_bias="0.308" />
 
     <Button
         android:id="@+id/btnAceptar"
@@ -94,8 +95,21 @@
         android:text="@string/aceptar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintHorizontal_bias="0.273"
         app:layout_constraintStart_toEndOf="@+id/btncancelar"
         app:layout_constraintTop_toBottomOf="@+id/txtDireccion"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintVertical_bias="0.329" />
+
+    <Button
+        android:id="@+id/btnTrazar"
+        android:layout_width="108dp"
+        android:layout_height="57dp"
+        android:backgroundTint="@android:color/transparent"
+        android:onClick="trazar"
+        android:text="@string/ruta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDireccion"
+        app:layout_constraintVertical_bias="0.081" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,10 @@
 package com.example.transportapp.ui.main.ui.slideshow;
 
 public class Trans {
-    public String conductor_id;
-    public String nombre_trans;
-    public String tarifa_trans;
-    public String matricula_vehi;
+    private String conductor_id;
+    private String nombre_trans;
+    private String tarifa_trans;
+    private String matricula_vehi;
 
     public Trans() {
     }
