@@ -1,13 +1,14 @@
 package com.example.transportapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.transportapp.ui.main.ui.slideshow.SlideshowViewModel;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.transportapp.ui.main.ui.slideshow.Trans;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -20,9 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class SeleccionServicio extends AppCompatActivity {
-    private List<Trans> listaPerson=new ArrayList<Trans>();
-    ArrayAdapter<Trans> arrayAdapterPersona;
+public class Selecionador extends AppCompatActivity {
+    private List<Trans> listaPerson = new ArrayList<Trans>();
+    private ArrayAdapter<Trans> arrayAdapterPersona;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     ListView lv_datosPersonas;
@@ -31,38 +32,39 @@ public class SeleccionServicio extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seleccionservicio);
-
-        lv_datosPersonas= findViewById(R.id.listachofer);
-
-       // iniciarFirabase();
-        //listarDatos();
+        setContentView(R.layout.activity_selected);
+        lv_datosPersonas = (ListView) findViewById(R.id.listachofer);
+        iniciarFirabase();
+        listarDatos();
 
 
     }
+
     private void iniciarFirabase() {
         FirebaseApp.initializeApp(this);
-        firebaseDatabase= FirebaseDatabase.getInstance();
-        databaseReference=firebaseDatabase.getReference();
-
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
     }
+
+
     private void listarDatos() {
-        Trans t=new Trans();
+      Trans t=new Trans();
         t.setConductor_id(UUID.randomUUID().toString());
         t.setNombre_trans("Tebo");
-        t.setTarifa_trans("345$");
-        t.setMatricula_vehi("TTT-111");
+        t.setTarifa_trans("4564$");
+        t.setMatricula_vehi("AAA-345");
         databaseReference.child("Transportista").child(t.getConductor_id()).setValue(t);
+
 
         databaseReference.child("Transportista").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 listaPerson.clear();
-                for(DataSnapshot objSnaptshot : dataSnapshot.getChildren()){
-                    Trans p=objSnaptshot.getValue(Trans.class);
+                for (DataSnapshot objSnaptshot : dataSnapshot.getChildren()) {
+                    Trans p = objSnaptshot.getValue(Trans.class);
                     listaPerson.add(p);
 
-                    arrayAdapterPersona=new ArrayAdapter<Trans>(SeleccionServicio.this,android.R.layout.simple_list_item_1,listaPerson);
+                    arrayAdapterPersona = new ArrayAdapter<Trans>(Selecionador.this, android.R.layout.simple_list_item_1, listaPerson);
                     lv_datosPersonas.setAdapter(arrayAdapterPersona);
                 }
             }
@@ -72,6 +74,13 @@ public class SeleccionServicio extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    public void solicitar(View view) {
+        Intent intent = new Intent(getApplicationContext(), SolicitudServicio.class);
+        startActivity(intent);
+        finish();
 
     }
 }

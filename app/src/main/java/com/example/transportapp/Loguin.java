@@ -45,7 +45,7 @@ private Button registrar;
             @Override
             public void onClick(View v) {
                 //menuIntegrado();
-                //ValidarCampos();
+                ValidarCampos();
             }
         });
         registrar.setOnClickListener(new View.OnClickListener() {
@@ -60,22 +60,33 @@ private Button registrar;
 
     }
 
-    public boolean ValidarCampos(){
-        boolean retorno=true;
+    public boolean ValidarCampos() {
+        boolean retorno = true;
         String us = usuario.getText().toString();
-        String con=contrasenia.getText().toString();
-        if (us.isEmpty()){
+        String con = contrasenia.getText().toString();
+        if (us.isEmpty()) {
             usuario.setError("Campo vacio");
-            retorno =false;
+            retorno = false;
         }
-        if(!Patterns.EMAIL_ADDRESS.matcher(us).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(us).matches()) {
             usuario.setError("Correo invalido");
-            retorno= false;
-        }if (con.isEmpty()){
+            retorno = false;
+        }
+        if (con.isEmpty()){
             contrasenia.setError("Campo vacio");
             retorno =false;
         }
-            return retorno;
+
+        if (!us.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(us).matches()) {
+            Intent intent = new Intent(getApplicationContext(), Selected.class);
+            startActivity(intent);
+            finish();
+            retorno= true ;
+        }
+        return retorno;
+
+
+
     }
 
     public void ValidarUsuarioContrasenia(){

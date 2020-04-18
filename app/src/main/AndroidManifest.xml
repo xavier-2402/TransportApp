@@ -20,18 +20,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".RegistroTransportista"></activity>
+        <activity android:name=".SolicitudServicio"></activity>
+        <activity android:name=".RegistroTransportista" />
         <activity android:name=".RegistroClientes" />
         <activity android:name=".InformacionFinal" />
         <activity
             android:name=".ui.main.Menus"
             android:label="@string/title_activity_menus"
             android:theme="@style/NoActionBar" />
-        <activity android:name=".Registro" />
-        <activity android:name=".Loguin">
+        <activity android:name=".Loguin" />
+        <activity android:name=".Selected">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                    <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <!--
@@ -47,7 +49,6 @@
             android:value="AIzaSyAusxSiPJnzrihaqEz1RYIPToRHUfjHaGs" />
 
         <activity android:name=".SolicitudServicio" />
-        <activity android:name=".SeleccionServicio" />
     </application>
 
 </manifest>
