@@ -21,7 +21,6 @@
             android:id="@+id/boton_finalizar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="finaliarPago"
             android:text="@string/aceptar" />
     </LinearLayout>
 
