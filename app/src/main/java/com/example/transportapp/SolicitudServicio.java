@@ -62,4 +62,10 @@ public class SolicitudServicio extends AppCompatActivity implements MapasFragmen
         finish();
 
     }
+    public void regresar(View view) {
+        Intent intent = new Intent(getApplicationContext(), Selected.class);
+        startActivity(intent);
+        finish();
+
+    }
 }

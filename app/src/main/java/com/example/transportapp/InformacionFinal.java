@@ -54,8 +54,12 @@ public class InformacionFinal extends AppCompatActivity {
     }
 
 
+    public void cancelarPago(View view) {
+        Intent intent = new Intent(getApplicationContext(), SolicitudServicio.class);
+        startActivity(intent);
+        finish();
 
-
+    }
 
 
 

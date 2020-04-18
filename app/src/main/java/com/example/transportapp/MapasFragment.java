@@ -241,13 +241,6 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
 
 
 
-    public void finaliarPago(View view) {
-        Intent intent = new Intent(MapasFragment.this.getContext(), InformacionFinal.class);
-        startActivity(intent);
-
-
-    }
-
 
 
     @Override
@@ -274,5 +267,10 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+    public void finaliarPago(View view) {
+        Intent intent = new Intent(MapasFragment.this.getContext(), Selected.class);
+        startActivity(intent);
+
     }
 }
