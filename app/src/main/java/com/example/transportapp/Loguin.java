@@ -105,7 +105,7 @@ public class Loguin extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), InformacionFinal.class);
             startActivity(intent);
             finish();
-            retorno =true;
+            retorno= true ;
         }
         return retorno;
     }
