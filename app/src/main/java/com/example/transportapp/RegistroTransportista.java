@@ -1,19 +1,22 @@
 package com.example.transportapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class RegistroTransportista extends AppCompatActivity {
 
-    private EditText nombre;
     private EditText matricula;
     private EditText placa;
     private Spinner color;
@@ -22,6 +25,8 @@ public class RegistroTransportista extends AppCompatActivity {
     private Spinner anio;
     private Button registrar;
     private Button anadirVehiculo;
+    private Button cargar;
+    private ImageView img;
 
 
     @Override
@@ -34,6 +39,8 @@ public class RegistroTransportista extends AppCompatActivity {
         anio=findViewById(R.id.cbanio);
         tipo=findViewById(R.id.cbtipo);
         marca=findViewById(R.id.cbmarca);
+        cargar = findViewById(R.id.cargar);
+        img = findViewById(R.id.imagen);
         cargarCombos();
         anadirVehiculo=findViewById(R.id.btnAñadirVechiculo);
 
@@ -45,6 +52,12 @@ public class RegistroTransportista extends AppCompatActivity {
                     matricula.setText("");
                     placa.setText("");
                 }
+            }
+        });
+        cargar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cargarImagen();
             }
         });
 
@@ -92,6 +105,22 @@ public class RegistroTransportista extends AppCompatActivity {
         marca.setAdapter(adaptermarca);
     }
 
-    
+    //Metodos para cargar Imagen
+    private void cargarImagen() {
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.setType("image/");
+        startActivityForResult(intent.createChooser(intent,"Seleccione la aplicacion"),10);
+
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_OK) {
+            Uri pathlocal = data.getData();
+            img.setImageURI(pathlocal);
+        }
+    }
+
+
 
 }
