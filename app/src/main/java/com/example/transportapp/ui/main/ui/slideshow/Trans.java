@@ -50,6 +50,6 @@ public class Trans {
 
     @Override
     public String toString() {
-        return nombre_trans+"\n"+tarifa_trans+"\n"+matricula_vehi;
+        return "Nombre Transportista: "+nombre_trans+"\nTarifa: "+tarifa_trans+"\nMatricula del Vehículo: "+matricula_vehi;
     }
 }

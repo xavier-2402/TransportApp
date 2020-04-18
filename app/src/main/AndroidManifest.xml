@@ -49,7 +49,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAusxSiPJnzrihaqEz1RYIPToRHUfjHaGs" />
 
-        <activity android:name=".SolicitudServicio" />
+        <activity android:name=".Selected" />
     </application>
 
 </manifest>
