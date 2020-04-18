@@ -20,13 +20,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".RegistroTransportista"></activity>
+        <activity android:name=".RegistroClientes" />
         <activity android:name=".InformacionFinal" />
         <activity
             android:name=".ui.main.Menus"
             android:label="@string/title_activity_menus"
             android:theme="@style/NoActionBar" />
         <activity android:name=".Registro" />
-        <activity android:name=".RegistroDetallado" />
+        <activity android:name=".Loguin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                    <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -41,13 +48,6 @@
 
         <activity android:name=".SolicitudServicio" />
         <activity android:name=".SeleccionServicio" />
-        <activity android:name=".Loguin">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

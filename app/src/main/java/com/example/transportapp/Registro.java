@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 public class Registro extends AppCompatActivity   {
 
     //Declaración de variables
-    private Button siguiente;
+    private Button transportista;
     private EditText nombre;
     private EditText apellido;
     private EditText direccion;
@@ -33,6 +33,7 @@ public class Registro extends AppCompatActivity   {
     private EditText cedula;
     private EditText pass;
     private EditText passverifica;
+    private Button clientes;
     private ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,17 +48,31 @@ public class Registro extends AppCompatActivity   {
         telefono=findViewById(R.id.txtTelefono);
         pass=findViewById(R.id.txtPasswordRegistro);
         passverifica=findViewById(R.id.txtPasswordVerificar);
-        siguiente=findViewById(R.id.btnSiguiente);
+        transportista=findViewById(R.id.btnTranportista);
         img =findViewById(R.id.imagen);
-
-        siguiente.setOnClickListener(new View.OnClickListener() {
+        clientes=findViewById(R.id.btnCliente);
+        clientes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Registro Detallado", Toast.LENGTH_SHORT).show();
-                ValidarCampos();
-                Intent intent = new Intent(getApplicationContext(), RegistroDetallado.class);
-                startActivity(intent);
-                finish();
+                if(ValidarCampos()== true){
+                    Intent intent = new Intent(getApplicationContext(),RegistroClientes.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
+        transportista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // Toast.makeText(getApplicationContext(), "Registro Detallado", Toast.LENGTH_SHORT).show();
+                if(ValidarCampos()==true){
+
+                    Intent intent = new Intent(getApplicationContext(), RegistroTransportista.class);
+                    startActivity(intent);
+                    finish();
+                }
+
+
             }
         });
     }
@@ -189,19 +204,6 @@ public class Registro extends AppCompatActivity   {
         }
     }
 
-   /* public void validarContraseña(){
-        String pas1= pass.getText().toString();
-        String pas2=passverifica.getText().toString();
-
-        if(pas1.equals(pas2)){
-
-        }
-        else{
-            Toast.makeText(getApplicationContext(),"No coinciden las contraseñas", Toast.LENGTH_SHORT).show();
-            passverifica.setText("");
-        }
-
-    }*/
 
 
 }

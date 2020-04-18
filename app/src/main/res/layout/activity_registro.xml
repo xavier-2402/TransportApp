@@ -15,7 +15,7 @@
         android:contentDescription="@string/SMsregistro"
         android:ems="10"
         android:hint="@string/cedula"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.481"
@@ -91,13 +91,14 @@
         app:layout_constraintVertical_bias="0.048" />
 
     <Button
-        android:id="@+id/btnSiguiente"
+        android:id="@+id/btnTranportista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/design_default_color_background"
-        android:text="@string/siguiente"
+        android:text="@string/transportista"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPasswordVerificar"
         app:layout_constraintVertical_bias="0.378" />
@@ -165,6 +166,19 @@
         android:text="Agregar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnCliente"
+        android:layout_width="119dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@color/design_default_color_background"
+        android:text="@string/clientes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toEndOf="@+id/btnTranportista"
+        app:layout_constraintTop_toBottomOf="@+id/txtPasswordVerificar"
+        app:layout_constraintVertical_bias="0.369" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
