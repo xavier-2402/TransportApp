@@ -44,7 +44,7 @@ private Button registrar;
         ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                menuIntegrado();
+               // menuIntegrado();
                 ValidarCampos();
             }
         });
