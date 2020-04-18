@@ -240,22 +240,13 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
     }
 
 
-    public void finalizarPago(View view) {
-        /*
-        finaliza=(Button)finaliza.findViewById(R.id.boton_finalizar);
-        finaliza.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-      */
-        Intent intent = new Intent (view.getContext(), InformacionFinal.class);
-                startActivity(intent);
-        //  }
-        //});
+
+    public void finaliarPago(View view) {
+        Intent intent = new Intent(MapasFragment.this.getContext(), InformacionFinal.class);
+        startActivity(intent);
+
 
     }
-        //Intent intent = new Intent(this, InformacionFinal.class);
-        //startActivity(intent);
-
 
 
 

@@ -139,7 +139,7 @@ private Button registrar;
     }
 
     public void menuIntegrado(){
-        Intent intent  =new Intent(getApplicationContext(),SolicitudServicio.class);
+        Intent intent  =new Intent(getApplicationContext(),Selected.class);
         startActivity(intent);
         finish();
     }
