@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -15,7 +16,7 @@ public class RegistroTransportista extends AppCompatActivity {
     private EditText nombre;
     private EditText matricula;
     private EditText placa;
-    private EditText color;
+    private Spinner color;
     private Spinner marca;
     private Spinner tipo;
     private Spinner anio;
@@ -29,11 +30,13 @@ public class RegistroTransportista extends AppCompatActivity {
         setContentView(R.layout.activity_registro_transportista);
         matricula=findViewById(R.id.txtMatricula);
         placa=findViewById(R.id.txtPlaca);
-        // color=rootView.findViewById(R.id.cbcolor);
+        color=findViewById(R.id.cbcolor);
         anio=findViewById(R.id.cbanio);
         tipo=findViewById(R.id.cbtipo);
         marca=findViewById(R.id.cbmarca);
+        cargarCombos();
         anadirVehiculo=findViewById(R.id.btnAñadirVechiculo);
+
         anadirVehiculo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +60,8 @@ public class RegistroTransportista extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
     public boolean ValidarCampos(){
@@ -75,5 +80,18 @@ public class RegistroTransportista extends AppCompatActivity {
 
         return retorno;
     }
+    public  void cargarCombos(){
+        ArrayAdapter<CharSequence> adaptercolor = ArrayAdapter.createFromResource(this,R.array.color,android.R.layout.simple_spinner_item);
+        ArrayAdapter <CharSequence> adapteranio = ArrayAdapter.createFromResource(this,R.array.anio,android.R.layout.simple_spinner_item);
+        ArrayAdapter <CharSequence> adaptermarca = ArrayAdapter.createFromResource(this,R.array.marca,android.R.layout.simple_spinner_item);
+        ArrayAdapter <CharSequence> adaptertipo = ArrayAdapter.createFromResource(this,R.array.tipo,android.R.layout.simple_spinner_item);
+
+        color.setAdapter(adaptercolor);
+        anio.setAdapter(adapteranio);
+        tipo.setAdapter(adaptertipo);
+        marca.setAdapter(adaptermarca);
+    }
+
+    
 
 }
