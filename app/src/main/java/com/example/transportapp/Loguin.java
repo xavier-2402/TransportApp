@@ -44,11 +44,7 @@ private Button registrar;
         ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(ValidarCampos()== true){
-                    Toast.makeText(getApplicationContext(), "Bienvenidos", Toast.LENGTH_SHORT).show();
-                    menuIntegrado();
-                }
-
+                //menuIntegrado();
                 //ValidarCampos();
             }
         });

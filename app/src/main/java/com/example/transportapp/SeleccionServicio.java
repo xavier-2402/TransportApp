@@ -26,7 +26,7 @@ public class SeleccionServicio extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     ListView lv_datosPersonas;
-    private SlideshowViewModel slideshowViewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
