@@ -119,7 +119,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btnFinalizar"
         android:layout_width="153dp"
         android:layout_height="54dp"
         android:text="@string/pago"

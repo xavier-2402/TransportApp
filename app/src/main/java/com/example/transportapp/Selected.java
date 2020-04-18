@@ -33,8 +33,8 @@ public class Selected extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selected);
-        lv_datosPersonas = (ListView) findViewById(R.id.listachofer);
+       // setContentView(R.layout.activity_selected);
+       // lv_datosPersonas = (ListView) findViewById(R.id.listachofer);
         iniciarFirabase();
         listarDatos();
 

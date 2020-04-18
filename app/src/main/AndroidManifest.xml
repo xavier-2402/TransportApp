@@ -28,8 +28,8 @@
             android:name=".ui.main.Menus"
             android:label="@string/title_activity_menus"
             android:theme="@style/NoActionBar" />
-        <activity android:name=".Loguin" />
-        <activity android:name=".Selected">
+        <activity android:name=".Registro" />
+        <activity android:name=".Loguin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

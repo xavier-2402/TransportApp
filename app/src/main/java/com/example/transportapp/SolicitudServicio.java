@@ -3,6 +3,7 @@ package com.example.transportapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,13 @@ public class SolicitudServicio extends AppCompatActivity implements MapasFragmen
         btnAceptar=findViewById(R.id.btnAceptar);
         btncancelar=findViewById(R.id.btncancelar);
         btnTrazar=findViewById(R.id.btnTrazar);
+
+        btnAceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Abrir();
+            }
+        });
     }
 
 
@@ -39,5 +47,12 @@ public class SolicitudServicio extends AppCompatActivity implements MapasFragmen
         btnTrazar.setVisibility(View.INVISIBLE);
         btnAceptar.setVisibility(View.INVISIBLE);
         btncancelar.setVisibility(View.INVISIBLE);
+    }
+
+    public void Abrir(){
+
+        Intent intent  =new Intent(getApplicationContext(),InformacionFinal.class);
+        startActivity(intent);
+        finish();
     }
 }

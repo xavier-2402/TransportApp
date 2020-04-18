@@ -44,8 +44,8 @@ private Button registrar;
         ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //menuIntegrado();
-                ValidarCampos();
+                menuIntegrado();
+                //ValidarCampos();
             }
         });
         registrar.setOnClickListener(new View.OnClickListener() {
@@ -139,7 +139,7 @@ private Button registrar;
     }
 
     public void menuIntegrado(){
-        Intent intent  =new Intent(getApplicationContext(), Menu.class);
+        Intent intent  =new Intent(getApplicationContext(),SolicitudServicio.class);
         startActivity(intent);
         finish();
     }
