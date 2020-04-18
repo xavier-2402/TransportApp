@@ -56,4 +56,10 @@ public class SolicitudServicio extends AppCompatActivity implements MapasFragmen
         startActivity(intent);
         finish();
     }
+    public void fina(View view) {
+        Intent intent = new Intent(getApplicationContext(), InformacionFinal.class);
+        startActivity(intent);
+        finish();
+
+    }
 }

@@ -92,6 +92,7 @@
         android:layout_width="108dp"
         android:layout_height="57dp"
         android:backgroundTint="@android:color/transparent"
+        android:onClick="fina"
         android:text="@string/aceptar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
