@@ -30,13 +30,13 @@ public class SeleccionServicio extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        lv_datosPersonas= findViewById(R.id.listachofer);
-        iniciarFirabase();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccionservicio);
 
+        lv_datosPersonas= findViewById(R.id.listachofer);
 
-        listarDatos();
+       // iniciarFirabase();
+        //listarDatos();
 
 
     }

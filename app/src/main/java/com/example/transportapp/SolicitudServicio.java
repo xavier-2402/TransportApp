@@ -17,6 +17,7 @@ public class SolicitudServicio extends AppCompatActivity implements MapasFragmen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicitudservicio);
+
         btnAceptar=findViewById(R.id.btnAceptar);
         btncancelar=findViewById(R.id.btncancelar);
         btnTrazar=findViewById(R.id.btnTrazar);

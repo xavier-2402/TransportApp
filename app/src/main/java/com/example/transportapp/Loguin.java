@@ -35,6 +35,7 @@ private Button registrar;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loguin);
+
         usuario=findViewById(R.id.txtUsuario);
         contrasenia=findViewById(R.id.txtContraseña);
         ingresar=findViewById(R.id.btnIngresar);

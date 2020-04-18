@@ -39,9 +39,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAusxSiPJnzrihaqEz1RYIPToRHUfjHaGs" />
 
-        <activity android:name=".Loguin" />
         <activity android:name=".SolicitudServicio" />
-        <activity android:name=".SeleccionServicio">
+        <activity android:name=".SeleccionServicio" />
+        <activity android:name=".Loguin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

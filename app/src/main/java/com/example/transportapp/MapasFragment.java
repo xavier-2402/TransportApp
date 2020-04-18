@@ -57,7 +57,7 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
     private String mParam1;
     private String mParam2;
     private OnFragmentInteractionListener mListener;
-    private Button boton_finalizar;
+    private Button finaliza;
 
     public MapasFragment() {
         // Required empty public constructor
@@ -89,7 +89,6 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
 
@@ -242,10 +241,22 @@ public class MapasFragment extends Fragment implements OnMapReadyCallback {
 
 
     public void finalizarPago(View view) {
-        Intent intent = new Intent(MapasFragment.this.getContext(), InformacionFinal.class);
-        startActivity(intent);
+        /*
+        finaliza=(Button)finaliza.findViewById(R.id.boton_finalizar);
+        finaliza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+      */
+        Intent intent = new Intent (view.getContext(), InformacionFinal.class);
+                startActivity(intent);
+        //  }
+        //});
 
     }
+        //Intent intent = new Intent(this, InformacionFinal.class);
+        //startActivity(intent);
+
+
 
 
     @Override
