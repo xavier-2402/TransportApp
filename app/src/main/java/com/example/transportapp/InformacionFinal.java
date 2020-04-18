@@ -44,20 +44,20 @@ public class InformacionFinal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 enviarCorreo();
-              //Abrir();
+                Intent intent = new Intent(getApplicationContext(), Selected.class);
+                startActivity(intent);
+                finish();
+
+
             }
         });
     }
 
 
 
-    public void Abrir(){
 
-        Intent intent  =new Intent(getApplicationContext(),SolicitudServicio.class);
 
-        startActivity(intent);
-        finish();
-    }
+
 
     public void enviarCorreo(){
         asunto = "Solicitud de servicio";
@@ -84,6 +84,8 @@ public class InformacionFinal extends AppCompatActivity {
 
         RetreiveFeedTask task = new RetreiveFeedTask();
         task.execute();
+
+
 
     }
 
